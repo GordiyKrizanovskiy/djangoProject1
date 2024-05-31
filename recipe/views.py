@@ -2,9 +2,8 @@ from django.shortcuts import render
 from .models import Recipe, Category
 
 def main(request):
-    recipes = Recipe.objects.all()
+    recipes = Recipe.objects.order_by('?')[:10]
     return render(request, 'recipe/main.html', {'recipes': recipes})
-
 
 def category_detail(request):
     categories = Category.objects.all()
