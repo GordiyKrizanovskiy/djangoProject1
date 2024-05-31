@@ -1,6 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
-def main(request):
-    return render(request, 'recipe/main.html')
+from django.shortcuts import render
+from .models import Recipe, Category
 
-def category_detail(request, category_slug):
-    return render(request, 'recipe/category_detail.html')
+def main(request):
+    recipes = Recipe.objects.all()
+    return render(request, 'recipe/main.html', {'recipes': recipes})
+
+
+def category_detail(request):
+    categories = Category.objects.all()
+    return render(request, 'recipe/category_detail.html', {'categories': categories})

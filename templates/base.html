@@ -6,6 +6,8 @@
 </head>
 <body>
     <div class="container mt-4">
+        <a href="{% url 'category_detail' %}" class="btn btn-primary mb-3">Перегляд категорій</a>
+        <a href="{% url 'main' %}" class="btn btn-primary mb-3">Головна сторінка</a>
         {% block content %}
         {% endblock %}
     </div>
